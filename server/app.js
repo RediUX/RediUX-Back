@@ -20,12 +20,14 @@ import contentsRouter from './routes/contents'
 var app = express();
 
 // view engine setup
-
+app.set('view engine', 'pug')
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
+const viewsDirectory = process.env.npm_config_local_prefix + "\\server\\views"
+app.set('views', viewsDirectory)
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

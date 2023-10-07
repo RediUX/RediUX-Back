@@ -13,7 +13,7 @@ var router = _express["default"].Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {
+  res.render('index.pug', {
     title: 'Express'
   });
 });
