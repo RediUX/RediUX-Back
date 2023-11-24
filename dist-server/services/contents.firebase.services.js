@@ -31,7 +31,8 @@ var ContentServices = /*#__PURE__*/function () {
             midia = _content$data.midia,
             descricao = _content$data.descricao,
             link = _content$data.link,
-            autor = _content$data.autor;
+            autor = _content$data.autor,
+            imgUrl = _content$data.imgUrl;
           contents.push({
             _id: _id,
             tags: tags,
@@ -39,7 +40,8 @@ var ContentServices = /*#__PURE__*/function () {
             midia: midia,
             descricao: descricao,
             link: link,
-            autor: autor
+            autor: autor,
+            imgUrl: imgUrl
           });
         });
         response.json(contents);
@@ -58,7 +60,8 @@ var ContentServices = /*#__PURE__*/function () {
           midia: content.data().midia,
           description: content.data().descricao,
           link: content.data().link,
-          author: content.data().autor
+          author: content.data().autor,
+          imgUrl: content.data().imgUrl
         };
         response.json(res);
       })["catch"](function (error) {
@@ -89,7 +92,8 @@ var ContentServices = /*#__PURE__*/function () {
             midia = _content$data2.midia,
             descricao = _content$data2.descricao,
             link = _content$data2.link,
-            autor = _content$data2.autor;
+            autor = _content$data2.autor,
+            imgUrl = _content$data2.imgUrl;
           if (titulo.toLowerCase().includes(searchTerm) && contentHasMedia(midia)) {
             contents.push({
               _id: _id,
@@ -98,7 +102,8 @@ var ContentServices = /*#__PURE__*/function () {
               midia: midia,
               descricao: descricao,
               link: link,
-              autor: autor
+              autor: autor,
+              imgUrl: imgUrl
             });
           }
         });
