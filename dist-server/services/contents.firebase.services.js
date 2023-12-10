@@ -32,7 +32,8 @@ var ContentServices = /*#__PURE__*/function () {
             descricao = _content$data.descricao,
             link = _content$data.link,
             autor = _content$data.autor,
-            imgUrl = _content$data.imgUrl;
+            imgUrl = _content$data.imgUrl,
+            file = _content$data.file
           contents.push({
             _id: _id,
             tags: tags,
@@ -41,7 +42,8 @@ var ContentServices = /*#__PURE__*/function () {
             descricao: descricao,
             link: link,
             autor: autor,
-            imgUrl: imgUrl
+            imgUrl: imgUrl,
+            file: file
           });
         });
         response.json(contents);
@@ -61,7 +63,8 @@ var ContentServices = /*#__PURE__*/function () {
           description: content.data().descricao,
           link: content.data().link,
           author: content.data().autor,
-          imgUrl: content.data().imgUrl
+          imgUrl: content.data().imgUrl,
+          file: content.data().file,
         };
         response.json(res);
       })["catch"](function (error) {

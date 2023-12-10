@@ -11,8 +11,8 @@ class ContentServices {
                 contentSnapshot.forEach(
                     (content)=>{
                         const _id = content.id
-                        const {titulo, tags, midia, descricao, link, autor, imgUrl} = content.data()
-                        contents.push({_id, tags, titulo, midia, descricao, link, autor, imgUrl})
+                        const {titulo, tags, midia, descricao, link, autor, imgUrl, file} = content.data()
+                        contents.push({_id, tags, titulo, midia, descricao, link, autor, imgUrl, file})
                     }
                 )
                 response.json(contents)
@@ -44,7 +44,8 @@ class ContentServices {
                         description: content.data().descricao,
                         link: content.data().link,
                         author: content.data().autor,
-                        imgUrl: content.data().imgUrl
+                        imgUrl: content.data().imgUrl,
+                        file: content.data().file,
                     }
                     response.json(res)
                 }
@@ -90,9 +91,9 @@ class ContentServices {
             const contents = [];
             contentSnapshot.forEach((content) => {
               const _id = content.id;
-              const { titulo, tags, midia, descricao, link, autor, imgUrl } = content.data();
+              const { titulo, tags, midia, descricao, link, autor, imgUrl, file } = content.data();
               if (titulo.toLowerCase().includes(searchTerm)&& contentHasMedia(midia)) {
-                contents.push({ _id, tags, titulo, midia, descricao, link, autor, imgUrl });
+                contents.push({ _id, tags, titulo, midia, descricao, link, autor, imgUrl, file });
               }
             });
             response.json(contents);
